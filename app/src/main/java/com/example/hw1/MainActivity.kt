@@ -10,8 +10,8 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore            // ← NEW
-import android.hardware.Camera              // ← NEW
+import android.provider.MediaStore
+import android.hardware.Camera
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var lock2: ImageView
     private lateinit var lock3: ImageView
     private lateinit var lock4: ImageView
-    private lateinit var root: ViewGroup            // playground for run‑away lock
+    private lateinit var root: ViewGroup
 
     private lateinit var stepReceiver: BroadcastReceiver
     private lateinit var motionLock: MotionLock
@@ -174,14 +174,12 @@ class MainActivity : AppCompatActivity() {
         lock3 = findViewById(R.id.lock3)
         lock4 = findViewById(R.id.lock4)
 
-        // Motion‑based lock (#3)
         motionLock = MotionLock(this) { unlocked ->
             locksSatisfied[2] = unlocked
             updateLockUI(2)
             checkAllLocks()
         }
 
-        // Lock 1 → cat‑photo challenge
         lock1.setOnClickListener {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED
@@ -192,7 +190,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Lock 2 → toggled + run‑away behaviour
         lock2.setOnClickListener { toggleLock(1, lock2) }
         addRunAwayBehavior(lock2, 1)
     }

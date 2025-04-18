@@ -18,9 +18,9 @@ class MotionLock(
     private var isUnlocked = false
     private var lastMotionTime = 0L
 
-    // ↓ tweak these two to taste
-    private val SHAKE_THRESHOLD_G = 1.5f        // > gravity × 1.5  ⇒ unlock
-    private val STILL_TIMEOUT_MS  = 3000L        // 0.8 s of calm     ⇒ lock
+
+    private val SHAKE_THRESHOLD_G = 1.5f
+    private val STILL_TIMEOUT_MS  = 3000L
 
     fun start() = sensorManager.registerListener(this, accel, SensorManager.SENSOR_DELAY_UI)
     fun stop()  = sensorManager.unregisterListener(this)
@@ -34,11 +34,11 @@ class MotionLock(
             lastMotionTime = now
             if (!isUnlocked) {
                 isUnlocked = true
-                onStateChanged(true)          // 🔓
+                onStateChanged(true)
             }
         } else if (isUnlocked && now - lastMotionTime > STILL_TIMEOUT_MS) {
             isUnlocked = false
-            onStateChanged(false)             // 🔒
+            onStateChanged(false)
         }
     }
 

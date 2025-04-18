@@ -102,10 +102,10 @@ class StepCounterService : Service(), SensorEventListener {
         getSharedPreferences(PREF, MODE_PRIVATE)
             .edit() { putBoolean(KEY_GOAL_DONE, true) }
 
-        // optional: notify UI via a broadcast so it can update instantly
+
         sendBroadcast(Intent("com.example.STEP_GOAL_REACHED"))
 
-        stopSelf()   // sensor no longer needed
+        stopSelf()
     }
 
     private fun saveBaseline(b: Int) =
@@ -119,7 +119,7 @@ class StepCounterService : Service(), SensorEventListener {
         val ch = NotificationChannel(
             CHANNEL_ID,
             "Step‑Lock Service",
-            NotificationManager.IMPORTANCE_LOW     // ← was IMPORTANCE_MIN
+            NotificationManager.IMPORTANCE_LOW
         )
         ch.description = "Counts steps in the background so your lock can open"
         getSystemService(NotificationManager::class.java)
