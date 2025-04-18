@@ -24,7 +24,7 @@ class StepCounterService : Service(), SensorEventListener {
     private var stepSensor: Sensor? = null
     private var baseline: Int? = null
     private var goalReached = false
-    private val stepGoal = 7
+    private val stepGoal = 10
 
     // Shared‑prefs keys
     companion object {
