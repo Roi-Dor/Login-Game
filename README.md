@@ -47,7 +47,7 @@ A fun and creative Android app built in Kotlin that challenges the user to unloc
 
 - The step counter service runs in the background and updates the lock state when the goal is reached.
 
-🔦 Lock 5 — Turn on the Flashlight
+###🔦 Lock 5 — Turn on the Flashlight
 
 This is the center lock.
 
@@ -89,7 +89,11 @@ ed in 🎉.
 
 ## 📸 Screenshots / 🎥 Demo Video
 
-https://github.com/user-attachments/assets/2f74b8c4-a734-4a90-a005-fc844642750e
+
+
+https://github.com/user-attachments/assets/1d4769d8-b074-4637-9bb4-24c530af14ff
+
+
 
 <img width="1042" alt="image" src="https://github.com/user-attachments/assets/5e8c6647-36d5-4565-b2d4-009d9ec120a7" />
 
