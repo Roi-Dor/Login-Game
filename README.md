@@ -47,7 +47,19 @@ A fun and creative Android app built in Kotlin that challenges the user to unloc
 
 - The step counter service runs in the background and updates the lock state when the goal is reached.
 
-Once **all four locks are open**, the app transitions to the **SuccessActivity** screen which confirms you're logged in 🎉.
+🔦 Lock 5 — Turn on the Flashlight
+
+This is the center lock.
+
+Turn on your phone’s flashlight.
+
+The app listens for flashlight status changes using the Camera2 API.
+
+Once the flashlight is turned on, the lock will open.
+
+Once all five locks are open, the app transitions to the SuccessActivity screen which confirms you're logged in 🎉. which confirms you're logged in 🎉.
+
+ed in 🎉.
 
 ---
 
